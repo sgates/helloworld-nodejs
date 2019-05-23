@@ -6,10 +6,9 @@ pipeline {
 
   }
   stages {
-    stage('Build') {
+    stage('build') {
       steps {
-        echo 'Hello World!'
-        sh 'java -version'
+        sh 'npm -v'
       }
     }
   }
