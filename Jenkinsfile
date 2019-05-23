@@ -1,14 +1,13 @@
 pipeline {
-  agent {
-    node {
-      label 'nodeAgent'
-    }
-
-  }
+  agent { label 'nodejs-app' }
   stages {
-    stage('build') {
+    stage('Test') {
       steps {
-        sh 'npm -v'
+        sh 'java -version'
+        container('nodejs') {
+          echo 'Hello World!'   
+          sh 'node --version'
+        }
       }
     }
   }
